@@ -1,0 +1,11 @@
+.product-img--container{
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+img{
+  width: 120px;
+  height: 165px;
+  object-fit: contain;
+}

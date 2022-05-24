@@ -1,0 +1,32 @@
+<div class="show-mobile--product-container">
+
+  <div class="show-mobile--title">
+    <button class="show-mobile--love-btn">
+
+      <img src="../../../assets/images/love-icon-empty.png" alt="love image" (click)="toggleFavorites(product)" *ngIf="!product.addedFavorites; else fullLove">
+      <ng-template #fullLove>
+        <img src="../../../assets/images/love-icon-full.png.png" alt="love image" (click)="toggleFavorites(product)">
+      </ng-template>
+
+    </button>
+    <p>{{product.title}}</p>
+    <h2>{{product.price | currency: 'USD'}}</h2>
+  </div>
+
+  <app-img [productImg]="product.image"></app-img>
+
+  <p class="show-mobile--product-description">{{product.description}}</p>
+
+  <div class="product--btns">
+    <button class="add-cart-btn product-btn" (click)="addToCart(product)" *ngIf="!product.addedCart; else addedBtn">
+      Add Cart
+    </button>
+
+    <ng-template #addedBtn>
+      <button class="add-cart-btn product-btn" (click)="addToCart(product)">Added Cart</button>
+    </ng-template>
+
+    <button class="show-details-btn product-btn">Show details</button>
+  </div>
+
+</div>
